@@ -1,0 +1,83 @@
+{
+  "itemName" : "phaserii",
+  "level" : 10,
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A federation Type II phaser. It's set to kill!",
+  "shortdescription" : "Phaser II",
+  "tooltipKind" : "gun",
+  "category" : "pistol",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","ranged","pistol"],
+
+  "inventoryIcon" : "phaserii.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "phaserii.png",
+    "barrel" : "",
+    "muzzleFlash" : "/animations/muzzleflash/plasmamuzzle1/plasmamuzzle1.animation"
+  },
+  "animationCustom": {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/plasma_mp1.ogg" ]
+    }},
+  "baseOffset" : [0.75, 0.125],
+  "muzzleOffset" : [1.0, 0.125],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.060,
+    "baseDps" : 30,
+    "energyUsage" : 15,
+    "inaccuracy" : 0.008,
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "plasmabullet",
+    "projectileParameters" : {
+      "speed" : 50,
+      "statusEffects" : [ "paralysis" ],
+      "lightColor" : [255, 51, 153]
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 10,
+        "weaponRotation" : 10,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.15,
+        "armRotation" : 10,
+        "weaponRotation" : 10,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+  }
